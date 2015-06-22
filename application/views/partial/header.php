@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assests/') ?>/css/font-awesome.min.css">
 
     <!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assests/') ?>/css/smartadmin-production.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assests/') ?>/css/smartadmin-production_unminified.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assests/') ?>/css/smartadmin-skins.css">
 
     <!-- SmartAdmin RTL Support is under construction

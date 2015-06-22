@@ -11704,7 +11704,7 @@ div.wijmo-wijmenu .wijmo-wijmenu-child .wijmo-wijmenu-text {
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.04);
   -moz-box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.04);
   display: block;
-  height: 270px;
+  height: 400px;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 10px;

@@ -2,6 +2,10 @@
 
 class Test extends CI_Controller
 {
+    public function index(){
+        $this->test2('dashboard');
+    }
+
     public function test2($view)
     {
         $this->load->view($view);

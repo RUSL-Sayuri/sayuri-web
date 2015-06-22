@@ -67,9 +67,9 @@
                                     <div class="col-sm-12">
                                         <div id="myCarousel" class="carousel fade profile-carousel">
                                             <div class="air air-bottom-right padding-10">
-                                                <a href="javascript:void(0);"
+                                                <a href="/edit_profile"
                                                    class="btn txt-color-white bg-color-teal btn-sm"><i
-                                                        class="fa fa-check"></i> Follow</a>&nbsp; <a
+                                                        class="fa fa-check"></i> Update <Profile></Profile></a>&nbsp; <a
                                                     href="javascript:void(0);"
                                                     class="btn txt-color-white bg-color-pinkDark btn-sm"><i
                                                         class="fa fa-link"></i> Connect</a>

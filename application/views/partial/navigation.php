@@ -18,25 +18,22 @@
     <nav>
         <ul>
             <li>
-                <a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span
+                <a href="/" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span
                         class="menu-item-parent">Dashboard</span></a>
             </li>
             <li>
-                <a href="#" title="Autism Centers"><i class="fa fa-lg fa-fw fa-building"></i> <span
+                <a href="/autism_centers" title="Autism Centers"><i class="fa fa-lg fa-fw fa-building"></i> <span
                         class="menu-item-parent">Autism Centers</span></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span
-                        class="menu-item-parent">Graphs</span></a>
+                        class="menu-item-parent">Other</span></a>
                 <ul>
                     <li>
-                        <a href="flot.html">Flot Chart</a>
+                        <a href="/login">Login</a>
                     </li>
                     <li>
-                        <a href="morris.html">Morris Charts</a>
-                    </li>
-                    <li>
-                        <a href="inline-charts.html">Inline Charts</a>
+                        <a href="/my_profile">Profile</a>
                     </li>
                 </ul>
             </li>
