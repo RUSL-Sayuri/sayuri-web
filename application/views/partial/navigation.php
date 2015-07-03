@@ -18,11 +18,11 @@
     <nav>
         <ul>
             <li>
-                <a href="/" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span
+                <a href="<?php echo base_url('index.php'); ?>/" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span
                         class="menu-item-parent">Dashboard</span></a>
             </li>
             <li>
-                <a href="/autism_centers" title="Autism Centers"><i class="fa fa-lg fa-fw fa-building"></i> <span
+                <a href="<?php echo base_url('index.php'); ?>/autism_centers" title="Autism Centers"><i class="fa fa-lg fa-fw fa-building"></i> <span
                         class="menu-item-parent">Autism Centers</span></a>
             </li>
             <li>
@@ -30,10 +30,10 @@
                         class="menu-item-parent">Other</span></a>
                 <ul>
                     <li>
-                        <a href="/login">Login</a>
+                        <a href="<?php echo base_url('index.php'); ?>/login">Login</a>
                     </li>
                     <li>
-                        <a href="/my_profile">Profile</a>
+                        <a href="<?php echo base_url('index.php'); ?>/my_profile">Profile</a>
                     </li>
                 </ul>
             </li>
@@ -42,7 +42,7 @@
                         class="menu-item-parent">Parent</span></a>
                 <ul>
                     <li>
-                        <a href="/parent_view_performance">View Performance</a>
+                        <a href="<?php echo base_url('index.php'); ?>/parent_view_performance">View Performance</a>
                     </li>
                 </ul>
             </li>
