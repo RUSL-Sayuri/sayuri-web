@@ -37,6 +37,15 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span
+                        class="menu-item-parent">Parent</span></a>
+                <ul>
+                    <li>
+                        <a href="/parent_view_performance">View Performance</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
