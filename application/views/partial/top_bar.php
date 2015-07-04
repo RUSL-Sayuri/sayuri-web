@@ -110,7 +110,7 @@
         <!-- multiple lang dropdown : find all flags in the image folder -->
         <ul class="header-dropdown-list hidden-xs">
             <li>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="img/flags/us.png"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="<?php echo base_url('assests/') ?>/img/flags/us.png"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
                 <ul class="dropdown-menu pull-right">
                     <li class="active">
                         <a href="javascript:void(0);"><img alt="" src="<?php echo base_url('assests/') ?>/img/flags/us.png"> US</a>
