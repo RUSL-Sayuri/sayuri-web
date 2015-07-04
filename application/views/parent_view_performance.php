@@ -369,31 +369,13 @@
             }, {
                 "period": "2015-03-10",
                 "vision": 4.2
-            }, {
-                "period": "2014-11-20",
-                "color": 2.6
-            }, {
-                "period": "2014-12-26",
-                "color": 3.4
-            }, {
-                "period": "2015-01-10",
-                "color": 4.2
-            }, {
-                "period": "2015-01-20",
-                "color": 2.9
-            }, {
-                "period": "2015-01-29",
-                "color": 3.8
-            }, {
-                "period": "2015-02-26",
-                "color": 4.2
             }];
             Morris.Line({
                 element: 'vision-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision', 'color'],
-                labels: ['Vision', 'Color'],
+                ykeys: ['vision'],
+                labels: ['Vision'],
                 xLabels: 'day'
             });
         }
@@ -429,31 +411,13 @@
             }, {
                 "period": "2015-03-10",
                 "vision": 4.2
-            }, {
-                "period": "2014-11-20",
-                "color": 2.6
-            }, {
-                "period": "2014-12-26",
-                "color": 3.4
-            }, {
-                "period": "2015-01-10",
-                "color": 4.2
-            }, {
-                "period": "2015-01-20",
-                "color": 2.9
-            }, {
-                "period": "2015-01-29",
-                "color": 3.8
-            }, {
-                "period": "2015-02-26",
-                "color": 4.2
             }];
             Morris.Line({
                 element: 'colours-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision', 'color'],
-                labels: ['Vision', 'Color'],
+                ykeys: ['vision'],
+                labels: ['Vision'],
                 xLabels: 'day'
             });
         }
@@ -489,31 +453,13 @@
             }, {
                 "period": "2015-03-10",
                 "vision": 4.2
-            }, {
-                "period": "2014-11-20",
-                "color": 2.6
-            }, {
-                "period": "2014-12-26",
-                "color": 3.4
-            }, {
-                "period": "2015-01-10",
-                "color": 4.2
-            }, {
-                "period": "2015-01-20",
-                "color": 2.9
-            }, {
-                "period": "2015-01-29",
-                "color": 3.8
-            }, {
-                "period": "2015-02-26",
-                "color": 4.2
             }];
             Morris.Line({
                 element: 'learnability-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision', 'color'],
-                labels: ['Vision', 'Color'],
+                ykeys: ['vision'],
+                labels: ['Vision'],
                 xLabels: 'day'
             });
         }
@@ -549,31 +495,13 @@
             }, {
                 "period": "2015-03-10",
                 "vision": 4.2
-            }, {
-                "period": "2014-11-20",
-                "color": 2.6
-            }, {
-                "period": "2014-12-26",
-                "color": 3.4
-            }, {
-                "period": "2015-01-10",
-                "color": 4.2
-            }, {
-                "period": "2015-01-20",
-                "color": 2.9
-            }, {
-                "period": "2015-01-29",
-                "color": 3.8
-            }, {
-                "period": "2015-02-26",
-                "color": 4.2
             }];
             Morris.Line({
                 element: 'decision-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision', 'color'],
-                labels: ['Vision', 'Color'],
+                ykeys: ['vision'],
+                labels: ['Vision'],
                 xLabels: 'day'
             });
         }
@@ -609,31 +537,13 @@
             }, {
                 "period": "2015-03-10",
                 "vision": 4.2
-            }, {
-                "period": "2014-11-20",
-                "color": 2.6
-            }, {
-                "period": "2014-12-26",
-                "color": 3.4
-            }, {
-                "period": "2015-01-10",
-                "color": 4.2
-            }, {
-                "period": "2015-01-20",
-                "color": 2.9
-            }, {
-                "period": "2015-01-29",
-                "color": 3.8
-            }, {
-                "period": "2015-02-26",
-                "color": 4.2
             }];
             Morris.Line({
                 element: 'size-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision', 'color'],
-                labels: ['Vision', 'Color'],
+                ykeys: ['vision'],
+                labels: ['Vision'],
                 xLabels: 'day'
             });
         }

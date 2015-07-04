@@ -4,7 +4,7 @@
     <div class="login-info">
 				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
 
-					<a href="javascript:void(0);" id="show-shortcut">
+					<a href="<?php echo base_url('index.php'); ?>/my_profile">
                         <img src="<?php echo base_url('assests/') ?>/img/avatars/sunny.png" alt="me" class="online"/>
 						<span>
 							john.doe
