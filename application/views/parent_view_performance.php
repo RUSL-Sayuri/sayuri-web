@@ -35,7 +35,8 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Dashboard <span>> Performance</span>
+                <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Dashboard
+                    <span>> Performance</span>
                 </h1>
             </div>
         </div>
@@ -86,7 +87,7 @@
 
             </div>
 
-<!--            start row-->
+            <!--            start row-->
             <div class="row">
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
@@ -220,7 +221,7 @@
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- new widget -->
-                    <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-3" data-widget-colorbutton="false"
+                    <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-5" data-widget-colorbutton="false"
                          data-widget-editbutton="false">
 
                         <header>
@@ -277,7 +278,10 @@
          * PAGE RELATED SCRIPTS
          */
 
-        if ($('#performance-graph').length) {
+        /**
+         * overall-performance-graph Data
+         */
+        if ($('#overall-performance-graph').length) {
             var performance_data = [{
                 "period": "2014-12-20",
                 "vision": 1.3
@@ -325,11 +329,221 @@
                 "color": 4.2
             }];
             Morris.Line({
-                element: 'performance-graph',
+                element: 'overall-performance-graph',
                 data: performance_data,
                 xkey: 'period',
                 ykeys: ['vision', 'color'],
                 labels: ['Vision', 'Color'],
+                xLabels: 'day'
+            });
+        }
+
+        /**
+         * vision-performance-graph Data
+         */
+        if ($('#vision-performance-graph').length) {
+            var performance_data = [{
+                "period": "2014-12-20",
+                "vision": 1.3
+            }, {
+                "period": "2014-12-23",
+                "vision": 1.4
+            }, {
+                "period": "2014-12-30",
+                "vision": 2.0
+            }, {
+                "period": "2015-01-5",
+                "vision": 2.2
+            }, {
+                "period": "2015-01-09",
+                "vision": 1.8
+            }, {
+                "period": "2015-01-17",
+                "vision": 2.9
+            }, {
+                "period": "2015-01-30",
+                "vision": 3.1
+            }, {
+                "period": "2015-02-14",
+                "vision": 3.7
+            }, {
+                "period": "2015-03-10",
+                "vision": 4.2
+            }];
+            Morris.Line({
+                element: 'vision-performance-graph',
+                data: performance_data,
+                xkey: 'period',
+                ykeys: ['vision'],
+                labels: ['Vision'],
+                xLabels: 'day'
+            });
+        }
+
+        /**
+         * colours-performance-graph Data
+         */
+        if ($('#colours-performance-graph').length) {
+            var performance_data = [{
+                "period": "2014-12-20",
+                "vision": 1.3
+            }, {
+                "period": "2014-12-23",
+                "vision": 1.4
+            }, {
+                "period": "2014-12-30",
+                "vision": 2.0
+            }, {
+                "period": "2015-01-5",
+                "vision": 2.2
+            }, {
+                "period": "2015-01-09",
+                "vision": 1.8
+            }, {
+                "period": "2015-01-17",
+                "vision": 2.9
+            }, {
+                "period": "2015-01-30",
+                "vision": 3.1
+            }, {
+                "period": "2015-02-14",
+                "vision": 3.7
+            }, {
+                "period": "2015-03-10",
+                "vision": 4.2
+            }];
+            Morris.Line({
+                element: 'colours-performance-graph',
+                data: performance_data,
+                xkey: 'period',
+                ykeys: ['vision'],
+                labels: ['Vision'],
+                xLabels: 'day'
+            });
+        }
+
+        /**
+         * learnability-performance-graph Data
+         */
+        if ($('#learnability-performance-graph').length) {
+            var performance_data = [{
+                "period": "2014-12-20",
+                "vision": 1.3
+            }, {
+                "period": "2014-12-23",
+                "vision": 1.4
+            }, {
+                "period": "2014-12-30",
+                "vision": 2.0
+            }, {
+                "period": "2015-01-5",
+                "vision": 2.2
+            }, {
+                "period": "2015-01-09",
+                "vision": 1.8
+            }, {
+                "period": "2015-01-17",
+                "vision": 2.9
+            }, {
+                "period": "2015-01-30",
+                "vision": 3.1
+            }, {
+                "period": "2015-02-14",
+                "vision": 3.7
+            }, {
+                "period": "2015-03-10",
+                "vision": 4.2
+            }];
+            Morris.Line({
+                element: 'learnability-performance-graph',
+                data: performance_data,
+                xkey: 'period',
+                ykeys: ['vision'],
+                labels: ['Vision'],
+                xLabels: 'day'
+            });
+        }
+
+        /**
+         * decision-performance-graph Data
+         */
+        if ($('#decision-performance-graph').length) {
+            var performance_data = [{
+                "period": "2014-12-20",
+                "vision": 1.3
+            }, {
+                "period": "2014-12-23",
+                "vision": 1.4
+            }, {
+                "period": "2014-12-30",
+                "vision": 2.0
+            }, {
+                "period": "2015-01-5",
+                "vision": 2.2
+            }, {
+                "period": "2015-01-09",
+                "vision": 1.8
+            }, {
+                "period": "2015-01-17",
+                "vision": 2.9
+            }, {
+                "period": "2015-01-30",
+                "vision": 3.1
+            }, {
+                "period": "2015-02-14",
+                "vision": 3.7
+            }, {
+                "period": "2015-03-10",
+                "vision": 4.2
+            }];
+            Morris.Line({
+                element: 'decision-performance-graph',
+                data: performance_data,
+                xkey: 'period',
+                ykeys: ['vision'],
+                labels: ['Vision'],
+                xLabels: 'day'
+            });
+        }
+
+        /**
+         * size-performance-graph Data
+         */
+        if ($('#size-performance-graph').length) {
+            var performance_data = [{
+                "period": "2014-12-20",
+                "vision": 1.3
+            }, {
+                "period": "2014-12-23",
+                "vision": 1.4
+            }, {
+                "period": "2014-12-30",
+                "vision": 2.0
+            }, {
+                "period": "2015-01-5",
+                "vision": 2.2
+            }, {
+                "period": "2015-01-09",
+                "vision": 1.8
+            }, {
+                "period": "2015-01-17",
+                "vision": 2.9
+            }, {
+                "period": "2015-01-30",
+                "vision": 3.1
+            }, {
+                "period": "2015-02-14",
+                "vision": 3.7
+            }, {
+                "period": "2015-03-10",
+                "vision": 4.2
+            }];
+            Morris.Line({
+                element: 'size-performance-graph',
+                data: performance_data,
+                xkey: 'period',
+                ykeys: ['vision'],
+                labels: ['Vision'],
                 xLabels: 'day'
             });
         }
