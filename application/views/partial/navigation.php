@@ -9,7 +9,6 @@
 						<span>
 							john.doe
 						</span>
-                        <i class="fa fa-angle-down"></i>
                     </a>
 
 				</span>
@@ -47,6 +46,9 @@
                 <ul>
                     <li>
                         <a href="<?php echo base_url('index.php'); ?>/parent_view_performance">View Performance</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/parent_manage_consultants">Manage Consultants</a>
                     </li>
                 </ul>
             </li>

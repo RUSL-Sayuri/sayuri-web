@@ -52,6 +52,9 @@
 <!-- FastClick: For mobile devices -->
 <script src="<?php echo base_url('assests/') ?>/js/plugin/fastclick/fastclick.js"></script>
 
+<!-- Toastr: Notification -->
+<script src="<?php echo base_url('assests/') ?>/js/plugin/toastr/toastr.min.js"></script>
+
 <!--[if IE 7]>
 
 <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
