@@ -26,6 +26,10 @@
                         class="menu-item-parent">Autism Centers</span></a>
             </li>
             <li>
+                <a href="<?php echo base_url('index.php'); ?>/inbox" title="Inbox"><i class="fa fa-lg fa-fw fa-inbox"></i> <span
+                        class="menu-item-parent">Inbox</span></a>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span
                         class="menu-item-parent">Other</span></a>
                 <ul>

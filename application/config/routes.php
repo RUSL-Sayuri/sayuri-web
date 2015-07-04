@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -42,6 +42,8 @@ $route['default_controller'] = "test";
 $route['404_override'] = '';
 
 //$route['test/(:any)'] = 'test/test2/$1';
+
+$route['email/(:any)'] = 'email/$1';
 $route['(:any)'] = 'test/test2/$1';
 
 
