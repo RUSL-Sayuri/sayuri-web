@@ -256,7 +256,7 @@
                         <header>
                             <span class="widget-icon"> <i class="fa fa-user"></i> </span>
 
-                            <h2>Consultation Requests</h2>
+                            <h2>Consulting Requests</h2>
 
                         </header>
 
@@ -276,7 +276,7 @@
 
                                 </div>
 
-                                <table id="dt_my_consultantations" class="table table-striped table-bordered table-hover">
+                                <table id="dt_consulting_requests" class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
                                         <th>Parent</th>
@@ -290,7 +290,7 @@
                                         <td>Saman Perera</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Accept</button>
+                                                <button class="btn btn-sm btn-success">Accept</button>
                                                 <button class="btn btn-sm btn-danger">Decline</button>
                                             </div>
                                         </td>
@@ -300,7 +300,7 @@
                                         <td>Saman Perera</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Accept</button>
+                                                <button class="btn btn-sm btn-success">Accept</button>
                                                 <button class="btn btn-sm btn-danger">Decline</button>
                                             </div>
                                         </td>
@@ -310,7 +310,7 @@
                                         <td>Saman Perera</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Accept</button>
+                                                <button class="btn btn-sm btn-success">Accept</button>
                                                 <button class="btn btn-sm btn-danger">Decline</button>
                                             </div>
                                         </td>
@@ -380,7 +380,7 @@
         /*
          * Datatable for list of my consultantations
          */
-        $('#dt_my_consultantations').dataTable({
+        $('#dt_consulting_requests').dataTable({
             "sPaginationType": "bootstrap_full"
         });
 

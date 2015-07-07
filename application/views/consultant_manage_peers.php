@@ -24,9 +24,9 @@
         <!-- breadcrumb -->
         <ol class="breadcrumb">
             <li>
-                Consultants
+                Consultant
             </li>
-
+            <li>Peers</li>
         </ol>
         <!-- end breadcrumb -->
 
@@ -39,8 +39,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
-                    <i class="fa fa-suitcase fa-fw "></i> //icon of the consultant module 
-                    Consultants
+                    <i class="fa fa-suitcase fa-fw "></i> 
+                    Peers
 
                 </h1>
             </div>
@@ -60,7 +60,7 @@
                         <header>
                             <span class="widget-icon"> <i class="fa fa-group"></i> </span>
 
-                            <h2>List of Consultants </h2>
+                            <h2>My Peers </h2>
                         </header>
 
                         <!-- widget div-->
@@ -71,48 +71,48 @@
 
                                 </div>
 
-                                <table id="dt_consultants" class="table table-striped table-bordered table-hover">
+                                <table id="dt_my_peers" class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Title</th>
-                                        <th>Action</th>
+                                        <th>Parent</th>
+                                        <th>Child</th>
+                                        <th>Profile</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td class="view"><b>Dr. Jayanath Sumanapala</b></td>
-                                        <td>MBBS</td>
+                                        <td class="view"><b>Nirmali Perera</b></td>
+                                        <td>Saman Perera</td>
                                         <td>
-                                            <button class="btn btn-sm">Request to consult</button>
+                                            <button class="btn btn-sm">View full profile</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="view"><b>Dr. Siripala Gamlathge</b></td>
-                                        <td>PhD</td>
+                                        <td class="view"><b>Sunil Rathnayaka</b></td>
+                                        <td>Dulani Rathnayaka</td>
                                         <td>
-                                            <button class="btn btn-sm">Request to consult</button>
+                                            <button class="btn btn-sm">View full profile</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="view"><b>Dr. (Mrs) Kanthi Lalanthapala</b></td>
-                                        <td>MPhill, PhD, MBBS, WCD, WWW</td>
+                                        <td class="view"><b>Peter Jerome</b></td>
+                                        <td>Champa Kalhari</td>
                                         <td>
-                                            <button class="btn btn-sm">Request to consult</button>
-                                        </td>
-                                    </tr>
-<tr>
-                                        <td class="view"><b>Dr. (Mrs) Jayanthi Swarnamali</b></td>
-                                        <td>PhD, MBBS, WWW</td>
-                                        <td>
-                                            <button class="btn btn-sm">Request to consult</button>
+                                            <button class="btn btn-sm">View full profile</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="view"><b>Dr. (Mrs) Kalpani Sumanaweera</b></td>
-                                        <td>PhD, WWW</td>
+                                        <td class="view"><b>Nicolas Morrias</b></td>
+                                        <td>John Peter</td>
                                         <td>
-                                            <button class="btn btn-sm">Request to consult</button>
+                                            <button class="btn btn-sm">View full profile</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="view"><b>Sunil Perera</b></td>
+                                        <td>Gayan Perera</td>
+                                        <td>
+                                            <button class="btn btn-sm">View full profile</button>
                                         </td>
                                     </tr>
 
@@ -137,7 +137,7 @@
                         <header>
                             <span class="widget-icon"> <i class="fa fa-user"></i> </span>
 
-                            <h2>My Consultants</h2>
+                            <h2>Consulting Requests</h2>
 
                         </header>
 
@@ -157,42 +157,42 @@
 
                                 </div>
 
-                                <table id="dt_my_consultants" class="table table-striped table-bordered table-hover">
+                                <table id="dt_consulting_requests" class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Title</th>
+                                        <th>Parent</th>
+                                        <th>Child</th>
                                         <th style="width: 160px">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td class="view"><b>Dr. Jayanath Sumanapala</b></td>
-                                        <td>MBBS</td>
+                                        <td class="view"><b>Srimali Abeykon</b></td>
+                                        <td>Savindu Kanchana</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Message</button>
-                                                <button class="btn btn-sm btn-danger">Remove</button>
+                                                <button class="btn btn-sm btn-success">Accept</button>
+                                                <button class="btn btn-sm btn-danger">Decline</button>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="view"><b>Dr. Siripala Gamlathge</b></td>
-                                        <td>PhD</td>
+                                        <td class="view"><b>Kanchana Kumari</b></td>
+                                        <td>Dineth Ravindu</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Message</button>
-                                                <button class="btn btn-sm btn-danger">Remove</button>
+                                                <button class="btn btn-sm btn-success">Accept</button>
+                                                <button class="btn btn-sm btn-danger">Decline</button>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="view"><b>Dr. (Mrs) Kanthi Lalanthapala</b></td>
-                                        <td>MPhill, PhD, MBBS, WCD, WWW</td>
+                                        <td class="view"><b>Upul Dhammika</b></td>
+                                        <td>Isuru Udana</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Message</button>
-                                                <button class="btn btn-sm btn-danger">Remove</button>
+                                                <button class="btn btn-sm btn-success">Accept</button>
+                                                <button class="btn btn-sm btn-danger">Decline</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -303,16 +303,16 @@
         });
 
         /*
-         * Datatable for list of consultants
+         * Datatable for list of My peers
          */
-        $('#dt_consultants').dataTable({
+        $('#dt_my_peers').dataTable({
             "sPaginationType": "bootstrap_full"
         });
 
         /*
-         * Datatable for list of my consultants
+         * Datatable for list of Consulting requests
          */
-        $('#dt_my_consultants').dataTable({
+        $('#dt_consulting_requests').dataTable({
             "sPaginationType": "bootstrap_full"
         });
 
