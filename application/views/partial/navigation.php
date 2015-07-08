@@ -63,6 +63,9 @@
                     <li>
                         <a href="<?php echo base_url('index.php'); ?>/consultant_manage_peers">Peers</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/consultant_children_performance">Children's Performance</a>
+                    </li>
                     
                 </ul>
             </li>
