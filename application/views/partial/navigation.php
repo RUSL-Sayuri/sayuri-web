@@ -83,6 +83,9 @@
                     <li>
                         <a href="<?php echo base_url('index.php'); ?>/school_class_profile">Class Profile</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/school_class_edit">Edit Class</a>
+                    </li>
                     
                 </ul>
             </li>
