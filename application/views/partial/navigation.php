@@ -52,6 +52,44 @@
                     </li>
                 </ul>
             </li>
+            
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span
+                        class="menu-item-parent">Consultant</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/consultant_dashboard">Consultant Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/consultant_manage_peers">Peers</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/consultant_children_performance">Children's Performance</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span
+                        class="menu-item-parent">School Head</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/school_dashboard">School Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/school_classes">My Classes</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/school_class_profile">Class Profile</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php'); ?>/school_class_edit">Edit Class</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            
         </ul>
     </nav>
     <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
