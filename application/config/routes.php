@@ -38,13 +38,14 @@
 |
 */
 
-$route['default_controller'] = "test";
+$route['default_controller'] = "users";
 $route['404_override'] = '';
 
 //$route['test/(:any)'] = 'test/test2/$1';
 
+$route['dashboard'] = 'users/dashboard';
 $route['email/(:any)'] = 'email/$1';
-$route['(:any)'] = 'test/test2/$1';
+//$route['(:any)'] = 'test/test2/$1';
 
 
 /* End of file routes.php */

@@ -285,16 +285,17 @@
                                         <th>Last Update</th>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>Vision</td>
-                                            <td>5.3</td>
-                                            <td>2015-03-20</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Colors</td>
-                                            <td>8.2</td>
-                                            <td>2015-03-18</td>
-                                        </tr>
+                                        <?php
+                                        foreach ($game_latest_scores as $key => $game_latest_score):
+                                            ?>
+                                            <tr>
+                                                <td><?= $key ?></td>
+                                                <td><?= $game_latest_score->score ?></td>
+                                                <td><?= substr($game_latest_score->date, 0, 10) ?></td>
+                                            </tr>
+                                        <?php
+                                        endforeach;
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -334,66 +335,36 @@
     $(document).ready(function () {
 
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
-        pageSetUp();
+        //pageSetUp();
 
         /*
          * PAGE RELATED SCRIPTS
          */
 
         if ($('#performance-graph').length) {
-            var performance_data = [{
-                "period": "2014-12-20",
-                "vision": 1.3
-            }, {
-                "period": "2014-12-23",
-                "vision": 1.4
-            }, {
-                "period": "2014-12-30",
-                "vision": 2.0
-            }, {
-                "period": "2015-01-5",
-                "vision": 2.2
-            }, {
-                "period": "2015-01-09",
-                "vision": 1.8
-            }, {
-                "period": "2015-01-17",
-                "vision": 2.9
-            }, {
-                "period": "2015-01-30",
-                "vision": 3.1
-            }, {
-                "period": "2015-02-14",
-                "vision": 3.7
-            }, {
-                "period": "2015-03-10",
-                "vision": 4.2
-            }, {
-                "period": "2014-11-20",
-                "color": 2.6
-            }, {
-                "period": "2014-12-26",
-                "color": 3.4
-            }, {
-                "period": "2015-01-10",
-                "color": 4.2
-            }, {
-                "period": "2015-01-20",
-                "color": 2.9
-            }, {
-                "period": "2015-01-29",
-                "color": 3.8
-            }, {
-                "period": "2015-02-26",
-                "color": 4.2
-            }];
+
+            var performance_data = [
+                <?php
+                echo generate_dashboard_graph_data($game_scores);
+                ?>
+            ];
             Morris.Line({
                 element: 'performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision', 'color'],
-                labels: ['Vision', 'Color'],
-                xLabels: 'day'
+                ykeys: [
+                    <?php
+                    foreach($game_scores as $type=>$value){
+                    echo "'$type', ";
+                    }
+                    ?>
+                ],
+                labels: [<?php
+                    foreach($game_scores as $type=>$value){
+                    echo "'$type', ";
+                    }
+                    ?>],
+                xLabels: 'Day'
             });
         }
 
@@ -401,22 +372,7 @@
 
 </script>
 
-<!-- Your GOOGLE ANALYTICS CODE Below -->
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
+<?php $this->load->view('partial/google_analytics'); ?>
 
 </body>
 
