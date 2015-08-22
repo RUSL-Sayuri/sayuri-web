@@ -1,4 +1,4 @@
-<?php $this->load->view('partial/header');?>
+<?php $this->load->view('partial/header'); ?>
 </head>
 <body class="">
 
@@ -89,14 +89,17 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>Sumaga</td>
-                                        <td>Kelaniya</td>
-                                        <td>
-                                            <button class="view btn btn-sm btn-default">View</button>
-                                        </td>
-                                    </tr>
-
+                                    <?php foreach ($autism_centers as $school): ?>
+                                        <tr>
+                                            <td><?= $school->fname . ' ' . $school->lname ?></td>
+                                            <td><?= $school->city ?></td>
+                                            <td>
+                                                <button data-user-id="<?= $school->id ?>"
+                                                        class="view btn btn-sm btn-default">View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
 
@@ -112,7 +115,7 @@
                 </article>
                 <article class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false"
-                         data-widget-deletebutton="false" >
+                         data-widget-deletebutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-map-marker"></i> </span>
 
@@ -166,7 +169,6 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Sumaga Special Needs School</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -175,15 +177,14 @@
                              src="<?php echo base_url('assests/') ?>/img/demo/64x64.png" alt=""/>
                     </div>
                     <div class="col-md-8">
-                        <h1 class="h1">Sumaga Special Needs School</h1>
-                        <address>461 Danister Ln, Peliyagoda</address>
+                        <h1 class="h1" id="school_name"></h1>
+                        <address id="school_address"></address>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12" style="padding-left: 50px;padding-right: 50px">
-                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda et eveniet labore laborum quam quisquam reprehenderit sequi veritatis. Autem delectus dolor ex laudantium minus modi quo suscipit tenetur voluptas.</p>
-                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda et eveniet labore laborum quam quisquam reprehenderit sequi veritatis. Autem delectus dolor ex laudantium minus modi quo suscipit tenetur voluptas.</p>
+                    <p class="text-justify" id="description"></p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -222,7 +223,20 @@
 
         /* END BASIC */
 
+
         $('.view').click(function () {
+            var user_id = $(this).data('user-id');
+
+            $.ajax({
+                type: "GET",
+                dataType: 'json',
+                url: "<?php echo base_url('users/autism_center/'); ?>/" + user_id,
+                success: function (data) {
+                    $("#school_name").html(data.fname + " " + data.lname);
+                    $("#school_address").html(data.addressline1 + ", " + data.addressline2 + ", " + data.city);
+                    $("#description").html(data.description);
+                }
+            });
             $('#myModal').modal('show');
         });
     })
@@ -258,26 +272,11 @@
             title: 'Kurunegala Special Need School'
         });
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
+    //google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 
-<!-- Your GOOGLE ANALYTICS CODE Below -->
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
+<?php $this->load->view('partial/google_analytics'); ?>
 
 </body>
 

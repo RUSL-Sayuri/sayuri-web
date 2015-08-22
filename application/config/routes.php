@@ -30,7 +30,7 @@
 | This route indicates which controller class should be loaded if the
 | URI contains no data. In the above example, the "welcome" class
 | would be loaded.
-|
+|messages.php
 |	$route['404_override'] = 'errors/page_missing';
 |
 | This route will tell the Router what URI segments to use if those provided
@@ -44,6 +44,15 @@ $route['404_override'] = '';
 //$route['test/(:any)'] = 'test/test2/$1';
 
 $route['dashboard'] = 'users/dashboard';
+$route['inbox'] = 'test/test2/inbox';
+$route['email-list'] = 'messages/inbox';
+$route['email-list-sent'] = 'messages/sentbox';
+$route['email-compose'] = 'messages/compose';
+$route['email-opened/(:num)'] = 'messages/mail_detail/$1';
+$route['email-opened-sent/(:num)'] = 'messages/mail_detail/$1/true';
+
+$route['autism_centers']= 'users/view_autism_centers';
+
 $route['email/(:any)'] = 'email/$1';
 //$route['(:any)'] = 'test/test2/$1';
 

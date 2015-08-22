@@ -101,139 +101,152 @@
                                 <!-- CHAT BODY -->
                                 <div id="chat-body" class="chat-body custom-scroll">
                                     <ul>
-                                        <li class="message">
-                                            <img src="<?php echo base_url('assests/') ?>/img/avatars/5.png"
-                                                 class="online" alt="">
+                                        <?php foreach ($smart_inbox as $message): ?>
+                                            <li class="message">
+                                                <img src="<?php echo base_url('assests/') ?>/img/avatars/5.png"
+                                                     class="online" alt="">
 
-                                            <div class="message-text">
-                                                <time>
-                                                    2014-01-13
-                                                </time>
-                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did
-                                                you meet the new board of director? He's a bit of an arse if you ask
-                                                me...anyway here is the report you requested. I am off to launch with
-                                                Lisa and Andrew, you wanna join?
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6">
-                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i
-                                                            class="fa fa-file"></i>
-                                                        report-2013-demographic-report-annual-earnings.xls </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-default">cancel</a> <a
-                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>
-                                                </p>
+                                                <div class="message-text">
+                                                    <time><?= $message->date_time ?></time>
+                                                    <a href="javascript:void(0);" class="username"><?= $message->fname . " " . $message->lname ?></a>
+                                                    <?= substr($message->body,0,100)?>
+                                                </div>
+                                            </li>
 
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6"> <i
-                                                            class="fa fa-ok txt-color-green"></i>
-                                                        tobacco-report-2012.doc </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-primary">open</a> </span>
-                                                </p></div>
-                                        </li>
-                                        <li class="message">
-                                            <img src="<?php echo base_url('assests/') ?>/img/avatars/5.png"
-                                                 class="online" alt="">
-
-                                            <div class="message-text">
-                                                <time>
-                                                    2014-01-13
-                                                </time>
-                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did
-                                                you meet the new board of director? He's a bit of an arse if you ask
-                                                me...anyway here is the report you requested. I am off to launch with
-                                                Lisa and Andrew, you wanna join?
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6">
-                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i
-                                                            class="fa fa-file"></i>
-                                                        report-2013-demographic-report-annual-earnings.xls </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-default">cancel</a> <a
-                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>
-                                                </p>
-
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6"> <i
-                                                            class="fa fa-ok txt-color-green"></i>
-                                                        tobacco-report-2012.doc </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-primary">open</a> </span>
-                                                </p></div>
-                                        </li>
-                                        <li class="message">
-                                            <img src="<?php echo base_url('assests/') ?>/img/avatars/5.png"
-                                                 class="online" alt="">
-
-                                            <div class="message-text">
-                                                <time>
-                                                    2014-01-13
-                                                </time>
-                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did
-                                                you meet the new board of director? He's a bit of an arse if you ask
-                                                me...anyway here is the report you requested. I am off to launch with
-                                                Lisa and Andrew, you wanna join?
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6">
-                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i
-                                                            class="fa fa-file"></i>
-                                                        report-2013-demographic-report-annual-earnings.xls </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-default">cancel</a> <a
-                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>
-                                                </p>
-
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6"> <i
-                                                            class="fa fa-ok txt-color-green"></i>
-                                                        tobacco-report-2012.doc </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-primary">open</a> </span>
-                                                </p></div>
-                                        </li>
-                                        <li class="message">
-                                            <img src="<?php echo base_url('assests/') ?>/img/avatars/5.png"
-                                                 class="online" alt="">
-
-                                            <div class="message-text">
-                                                <time>
-                                                    2014-01-13
-                                                </time>
-                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did
-                                                you meet the new board of director? He's a bit of an arse if you ask
-                                                me...anyway here is the report you requested. I am off to launch with
-                                                Lisa and Andrew, you wanna join?
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6">
-                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i
-                                                            class="fa fa-file"></i>
-                                                        report-2013-demographic-report-annual-earnings.xls </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-default">cancel</a> <a
-                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>
-                                                </p>
-
-                                                <p class="chat-file row">
-                                                    <b class="pull-left col-sm-6"> <i
-                                                            class="fa fa-ok txt-color-green"></i>
-                                                        tobacco-report-2012.doc </b>
-                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"
-                                                                                          class="btn btn-xs btn-primary">open</a> </span>
-                                                </p></div>
-                                        </li>
-                                        <li class="message">
-                                            <img src="<?php echo base_url('assests/') ?>/img/avatars/sunny.png"
-                                                 class="online" alt="">
-
-                                            <div class="message-text">
-                                                <time>
-                                                    2014-01-13
-                                                </time>
-                                                <a href="javascript:void(0);" class="username">John Doe</a> Haha! Yeah I
-                                                know what you mean. Thanks for the file Sadi! <i
-                                                    class="fa fa-smile-o txt-color-orange"></i>
-                                            </div>
-                                        </li>
+                                        <?php endforeach; ?>
+<!--                                        <li class="message">-->
+<!--                                            <img src="--><?php //echo base_url('assests/') ?><!--/img/avatars/5.png"-->
+<!--                                                 class="online" alt="">-->
+<!---->
+<!--                                            <div class="message-text">-->
+<!--                                                <time>-->
+<!--                                                    2014-01-13-->
+<!--                                                </time>-->
+<!--                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did-->
+<!--                                                you meet the new board of director? He's a bit of an arse if you ask-->
+<!--                                                me...anyway here is the report you requested. I am off to launch with-->
+<!--                                                Lisa and Andrew, you wanna join?-->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6">-->
+<!--                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i-->
+<!--                                                            class="fa fa-file"></i>-->
+<!--                                                        report-2013-demographic-report-annual-earnings.xls </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-default">cancel</a> <a-->
+<!--                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>-->
+<!--                                                </p>-->
+<!---->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6"> <i-->
+<!--                                                            class="fa fa-ok txt-color-green"></i>-->
+<!--                                                        tobacco-report-2012.doc </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-primary">open</a> </span>-->
+<!--                                                </p></div>-->
+<!--                                        </li>-->
+<!--                                        <li class="message">-->
+<!--                                            <img src="--><?php //echo base_url('assests/') ?><!--/img/avatars/5.png"-->
+<!--                                                 class="online" alt="">-->
+<!---->
+<!--                                            <div class="message-text">-->
+<!--                                                <time>-->
+<!--                                                    2014-01-13-->
+<!--                                                </time>-->
+<!--                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did-->
+<!--                                                you meet the new board of director? He's a bit of an arse if you ask-->
+<!--                                                me...anyway here is the report you requested. I am off to launch with-->
+<!--                                                Lisa and Andrew, you wanna join?-->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6">-->
+<!--                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i-->
+<!--                                                            class="fa fa-file"></i>-->
+<!--                                                        report-2013-demographic-report-annual-earnings.xls </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-default">cancel</a> <a-->
+<!--                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>-->
+<!--                                                </p>-->
+<!---->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6"> <i-->
+<!--                                                            class="fa fa-ok txt-color-green"></i>-->
+<!--                                                        tobacco-report-2012.doc </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-primary">open</a> </span>-->
+<!--                                                </p></div>-->
+<!--                                        </li>-->
+<!--                                        <li class="message">-->
+<!--                                            <img src="--><?php //echo base_url('assests/') ?><!--/img/avatars/5.png"-->
+<!--                                                 class="online" alt="">-->
+<!---->
+<!--                                            <div class="message-text">-->
+<!--                                                <time>-->
+<!--                                                    2014-01-13-->
+<!--                                                </time>-->
+<!--                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did-->
+<!--                                                you meet the new board of director? He's a bit of an arse if you ask-->
+<!--                                                me...anyway here is the report you requested. I am off to launch with-->
+<!--                                                Lisa and Andrew, you wanna join?-->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6">-->
+<!--                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i-->
+<!--                                                            class="fa fa-file"></i>-->
+<!--                                                        report-2013-demographic-report-annual-earnings.xls </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-default">cancel</a> <a-->
+<!--                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>-->
+<!--                                                </p>-->
+<!---->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6"> <i-->
+<!--                                                            class="fa fa-ok txt-color-green"></i>-->
+<!--                                                        tobacco-report-2012.doc </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-primary">open</a> </span>-->
+<!--                                                </p></div>-->
+<!--                                        </li>-->
+<!--                                        <li class="message">-->
+<!--                                            <img src="--><?php //echo base_url('assests/') ?><!--/img/avatars/5.png"-->
+<!--                                                 class="online" alt="">-->
+<!---->
+<!--                                            <div class="message-text">-->
+<!--                                                <time>-->
+<!--                                                    2014-01-13-->
+<!--                                                </time>-->
+<!--                                                <a href="javascript:void(0);" class="username">Sadi Orlaf</a> Hey did-->
+<!--                                                you meet the new board of director? He's a bit of an arse if you ask-->
+<!--                                                me...anyway here is the report you requested. I am off to launch with-->
+<!--                                                Lisa and Andrew, you wanna join?-->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6">-->
+<!--                                                        <!--<i class="fa fa-spinner fa-spin"></i>--> <i-->
+<!--                                                            class="fa fa-file"></i>-->
+<!--                                                        report-2013-demographic-report-annual-earnings.xls </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-default">cancel</a> <a-->
+<!--                                                            href="javascript:void(0);" class="btn btn-xs btn-success">save</a> </span>-->
+<!--                                                </p>-->
+<!---->
+<!--                                                <p class="chat-file row">-->
+<!--                                                    <b class="pull-left col-sm-6"> <i-->
+<!--                                                            class="fa fa-ok txt-color-green"></i>-->
+<!--                                                        tobacco-report-2012.doc </b>-->
+<!--                                                    <span class="col-sm-6 pull-right"> <a href="javascript:void(0);"-->
+<!--                                                                                          class="btn btn-xs btn-primary">open</a> </span>-->
+<!--                                                </p></div>-->
+<!--                                        </li>-->
+<!--                                        <li class="message">-->
+<!--                                            <img src="--><?php //echo base_url('assests/') ?><!--/img/avatars/sunny.png"-->
+<!--                                                 class="online" alt="">-->
+<!---->
+<!--                                            <div class="message-text">-->
+<!--                                                <time>-->
+<!--                                                    2014-01-13-->
+<!--                                                </time>-->
+<!--                                                <a href="javascript:void(0);" class="username">John Doe</a> Haha! Yeah I-->
+<!--                                                know what you mean. Thanks for the file Sadi! <i-->
+<!--                                                    class="fa fa-smile-o txt-color-orange"></i>-->
+<!--                                            </div>-->
+<!--                                        </li>-->
                                     </ul>
 
                                 </div>
@@ -291,7 +304,7 @@
                                             <tr>
                                                 <td><?= $key ?></td>
                                                 <td><?= $game_latest_score->score ?></td>
-                                                <td><?= substr($game_latest_score->date, 0, 10) ?></td>
+                                                <td><?= $game_latest_score->date ?></td>
                                             </tr>
                                         <?php
                                         endforeach;
@@ -345,25 +358,16 @@
 
             var performance_data = [
                 <?php
-                echo generate_dashboard_graph_data($game_scores);
+                echo generate_dashboard_graph_data($overall_game_score);
                 ?>
             ];
             Morris.Line({
                 element: 'performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: [
-                    <?php
-                    foreach($game_scores as $type=>$value){
-                    echo "'$type', ";
-                    }
-                    ?>
+                ykeys: ['Score'
                 ],
-                labels: [<?php
-                    foreach($game_scores as $type=>$value){
-                    echo "'$type', ";
-                    }
-                    ?>],
+                labels: ['Score'],
                 xLabels: 'Day'
             });
         }

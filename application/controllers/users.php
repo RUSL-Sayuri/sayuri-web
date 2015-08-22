@@ -81,6 +81,7 @@ class users extends CI_Controller
         $this->load->helper('morris');
 
         $this->load->model('game');
+        $this->load->model('message');
 
         $game_categories = $this->game->get_game_categories();
         $game_latest_scores = array();
@@ -92,81 +93,46 @@ class users extends CI_Controller
                 $game_latest_scores[$game_category->category] = $this->game->get_latest_score($this->USER_OBJ->id, $game_in_category->game_id);
             }
         }
+        $overall_game_score = array();
+        $play_dates = $this->game->get_play_dates($this->USER_OBJ->id);
+        foreach ($play_dates as $date) {
+            $game_score = 0;
+            $count = 0;
+            foreach ($game_scores as $game_category) {
+                foreach ($game_category as $games_in_category) {
+                    if ($date->date == $games_in_category->date) {
+//                        $game_score += $games_in_category->score * $games_in_category->level;
+                        $game_score += $games_in_category->score;
+                        $count++;
+                    }
+                }
+            }
+            $overall_game_score[$date->date] = $game_score / $count;
+        }
+
+
+        $smart_inbox = $this->message->get_inbox($this->USER_OBJ->id, 5);
+
         $view_data = array(
-            'game_scores' => $game_scores,
-            'game_latest_scores' => $game_latest_scores
+            'overall_game_score' => $overall_game_score,
+            'game_latest_scores' => $game_latest_scores,
+            'smart_inbox' => $smart_inbox
         );
         $this->load->view('dashboard', $view_data);
     }
 
-
-    public function create_CAD_user()
+    public function view_autism_centers()
     {
-        if (isset($this->USER_OBJ->id)) {
-            $view_data = array(
-                'user' => $this->USER_OBJ,
-                'position' => 'Administrator',
-            );
-            $this->load->view('admin/admin_create_CAD_user', $view_data);
-
-        } else {
-            redirect('/');
-        }
+        $autism_centers = $this->user->get_autism_centers();
+        $this->load->view('autism_centers', array('autism_centers' => $autism_centers));
     }
 
-    public function register_CAD_user()
+    public function autism_center($id)
     {
-        $this->load->config('cad');
-        $this->load->helper('string');
-        $temp_password = random_string('alnum', $this->config->item('default_password_length'));
-        $user_data = array(
-            'first_name' => $this->input->post('first_name'),
-            'last_name' => $this->input->post('last_name'),
-            'title' => $this->input->post('position'),
-            'email' => $this->input->post('email'),
-            'username' => $this->input->post('email'),
-            'password' => sha1($temp_password),
-            'user_type' => 'cad',
-        );
-
-        $id = $this->user->register_CAD_user($user_data);
-        if ($id != 0) {
-            $email_body = $this->load->view('email_templates/add_user', array(
-                'receiver_name' => $user_data['first_name'] . " " . $user_data['last_name'],
-                'email' => $user_data['email'],
-                'password' => $temp_password
-            ), true);
-            if ($this->send_email($user_data['email'], 'Your Login details in CAD Portal', $email_body)) {
-                $view_data = array(
-                    'user' => $this->USER_OBJ,
-                    'position' => 'Administrator',
-                    'success' => true,
-                );
-                $this->load->view('admin/admin_create_CAD_user', $view_data);
-            }
-        } else {
-            echo 'error : ' . $id;
-        }
-
+        $autism_center = $this->user->get_autism_center($id);
+        echo json_encode($autism_center);
     }
 
-    public function registration_request($success = 0)
-    {
-        if (isset($this->USER_OBJ->id)) {
-            $view_data = array(
-                'user' => $this->USER_OBJ,
-                'position' => 'Administrator',
-                'users' => $this->user->get_registration_requests(),
-            );
-            if ($success == 1) {
-                $view_data['success'] = 'true';
-            }
-            $this->load->view('admin/admin_registration_request', $view_data);
-
-        } else {
-            redirect('/');
-        }
-    }
 
     public function get_single_user()
     {
