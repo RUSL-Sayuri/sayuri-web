@@ -230,7 +230,7 @@
             $.ajax({
                 type: "GET",
                 dataType: 'json',
-                url: "<?php echo base_url('users/autism_center/'); ?>/" + user_id,
+                url: "<?php echo base_url('index.php/users/autism_center/'); ?>/" + user_id,
                 success: function (data) {
                     $("#school_name").html(data.fname + " " + data.lname);
                     $("#school_address").html(data.addressline1 + ", " + data.addressline2 + ", " + data.city);
