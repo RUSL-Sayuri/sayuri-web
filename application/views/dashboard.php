@@ -103,7 +103,7 @@
                                     <ul>
                                         <?php foreach ($smart_inbox as $message): ?>
                                             <li class="message">
-                                                <img src="<?php echo base_url('assests/') ?>/img/avatars/5.png"
+                                                <img src="<?php echo base_url('assests/') ?>/img/avatars/4.png"
                                                      class="online" alt="">
 
                                                 <div class="message-text">

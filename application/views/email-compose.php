@@ -2,7 +2,7 @@
     Compose New Message
 </h2>
 
-<form enctype="multipart/form-data" action="<?php echo base_url('messages/send'); ?>" method="POST"
+<form enctype="multipart/form-data" action="<?php echo base_url('index.php/messages/send'); ?>" method="POST"
       class="form-horizontal"
       id="email-compose-form">
 
