@@ -23,7 +23,7 @@
 <script src="<?php echo base_url('assests/') ?>/js/bootstrap/bootstrap.min.js"></script>
 
 <!-- CUSTOM NOTIFICATION -->
-<script src="<?php echo base_url('assests/') ?>/js/notification/SmartNotification.min.js"></script>
+<script src="<?php echo base_url('assests/') ?>/js/notification/SmartNotification.js"></script>
 
 <!-- JARVIS WIDGETS -->
 <script src="<?php echo base_url('assests/') ?>/js/smartwidgets/jarvis.widget.min.js"></script>
@@ -61,8 +61,9 @@
 
 <![endif]-->
 
-<!-- Demo purpose only -->
-<script src="<?php echo base_url('assests/') ?>/js/demo.js"></script>
-
 <!-- MAIN APP JS FILE -->
 <script src="<?php echo base_url('assests/') ?>/js/app.js"></script>
+
+<!--COMMON_JS FILE -->
+<script src="<?php echo base_url('assests/') ?>/js/common_js.js"></script>
+
