@@ -70,6 +70,8 @@ class message extends CI_Model
         $this->db->from('message');
         $this->db->join('user', 'message.to=user.id', 'inner');
         $this->db->where('`from`', $from);
+        $this->db->order_by('date_time', 'DESC');
+
 
         return $this->db->get()->result();
     }
