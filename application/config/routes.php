@@ -53,6 +53,18 @@ $route['email-opened-sent/(:num)'] = 'messages/mail_detail/$1/true';
 
 $route['autism_centers']= 'users/view_autism_centers';
 
+
+$route['my_profile']='test/test2/my_profile';
+$route['parent_view_performance']='test/test2/parent_view_performance';
+$route['parent_manage_consultants']='test/test2/parent_manage_consultants';
+$route['consultant_dashboard']='test/test2/consultant_dashboard';
+$route['consultant_manage_peers']='test/test2/consultant_manage_peers';
+$route['consultant_children_performance']='test/test2/consultant_children_performance';
+$route['school_dashboard']='test/test2/school_dashboard';
+$route['school_class_profile']='test/test2/school_dashboard';
+$route['school_classes']='test/test2/school_dashboard';
+$route['school_class_edit']='test/test2/school_class_edit';
+
 $route['email/(:any)'] = 'email/$1';
 //$route['(:any)'] = 'test/test2/$1';
 
