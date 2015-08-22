@@ -64,7 +64,7 @@ if (!isset($login_fail)) {
             </div>
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
                 <div class="well no-padding">
-                    <form action="<?= base_url('users/login') ?>" id="login-form" method="post"
+                    <form action="<?= base_url('index.php/users/login') ?>" id="login-form" method="post"
                           class="smart-form client-form">
                         <header>
                             Sign In
