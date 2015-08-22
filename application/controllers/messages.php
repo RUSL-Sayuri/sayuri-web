@@ -38,7 +38,7 @@ class messages extends CI_Controller
             foreach ($to as $receiver) {
                 $this->send_individual_message($from, $receiver, $subject, $body);
             }
-
+            redirect('/index.php/inbox');
         } else {
             redirect('/');
         }
