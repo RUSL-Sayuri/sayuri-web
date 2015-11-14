@@ -358,6 +358,7 @@
 
             var performance_data = [
                 <?php
+                // The generate_dashboard_graph_data() can be found in helper class
                 echo generate_dashboard_graph_data($overall_game_score);
                 ?>
             ];

@@ -34,7 +34,7 @@ class game extends CI_Model
 
     public function get_game_categories()
     {
-        $this->db->select('category');
+        $this->db->select('game_id, category');
         $this->db->from('game');
         return $this->db->get()->result();
     }
@@ -46,6 +46,14 @@ class game extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function get_scores($game_id, $user_id){
+        $this->db->select('p_id, date_time, score, level, play.game_id');
+        $this->db->from('play');
+        $this->db->join('game', 'play.game_id = game.game_id', 'inner');
+        $this->db->where('p_id',$user_id);
+        $this->db->where('play.game_id',$game_id);
+        return $this->db->get()->result();
+    }
 }
 
 /* End of file game.php */

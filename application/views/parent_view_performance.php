@@ -282,59 +282,21 @@
          * overall-performance-graph Data
          */
         if ($('#overall-performance-graph').length) {
-            var performance_data = [{
-                "period": "2014-12-20",
-                "vision": 1.3
-            }, {
-                "period": "2014-12-23",
-                "vision": 1.4
-            }, {
-                "period": "2014-12-30",
-                "vision": 2.0
-            }, {
-                "period": "2015-01-5",
-                "vision": 2.2
-            }, {
-                "period": "2015-01-09",
-                "vision": 1.8
-            }, {
-                "period": "2015-01-17",
-                "vision": 2.9
-            }, {
-                "period": "2015-01-30",
-                "vision": 3.1
-            }, {
-                "period": "2015-02-14",
-                "vision": 3.7
-            }, {
-                "period": "2015-03-10",
-                "vision": 4.2
-            }, {
-                "period": "2014-11-20",
-                "color": 2.6
-            }, {
-                "period": "2014-12-26",
-                "color": 3.4
-            }, {
-                "period": "2015-01-10",
-                "color": 4.2
-            }, {
-                "period": "2015-01-20",
-                "color": 2.9
-            }, {
-                "period": "2015-01-29",
-                "color": 3.8
-            }, {
-                "period": "2015-02-26",
-                "color": 4.2
-            }];
+            var performance_data = [
+                <?php
+                foreach ($overall_game_score as $game => $score) {
+                  echo  generate_morris_graph_data($score,$game);
+                }
+                 ?>
+            ];
             Morris.Line({
                 element: 'overall-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision', 'color'],
-                labels: ['Vision', 'Color'],
-                xLabels: 'day'
+                ykeys: ['Vision', 'Colour', 'Procedures', 'Sound', 'Clothing'],
+                labels: ['Vision', 'Color', 'Procedures', 'Sound', 'Clothing'],
+                xLabels: 'day',
+                hideHover: 'always'
             });
         }
 
@@ -342,39 +304,16 @@
          * vision-performance-graph Data
          */
         if ($('#vision-performance-graph').length) {
-            var performance_data = [{
-                "period": "2014-12-20",
-                "vision": 1.3
-            }, {
-                "period": "2014-12-23",
-                "vision": 1.4
-            }, {
-                "period": "2014-12-30",
-                "vision": 2.0
-            }, {
-                "period": "2015-01-5",
-                "vision": 2.2
-            }, {
-                "period": "2015-01-09",
-                "vision": 1.8
-            }, {
-                "period": "2015-01-17",
-                "vision": 2.9
-            }, {
-                "period": "2015-01-30",
-                "vision": 3.1
-            }, {
-                "period": "2015-02-14",
-                "vision": 3.7
-            }, {
-                "period": "2015-03-10",
-                "vision": 4.2
-            }];
+            var performance_data = [
+                <?php
+                echo  generate_morris_graph_data($overall_game_score['Vision'],'Vision');
+                ?>
+            ];
             Morris.Line({
                 element: 'vision-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision'],
+                ykeys: ['Vision'],
                 labels: ['Vision'],
                 xLabels: 'day'
             });
@@ -384,40 +323,17 @@
          * colours-performance-graph Data
          */
         if ($('#colours-performance-graph').length) {
-            var performance_data = [{
-                "period": "2014-12-20",
-                "vision": 1.3
-            }, {
-                "period": "2014-12-23",
-                "vision": 1.4
-            }, {
-                "period": "2014-12-30",
-                "vision": 2.0
-            }, {
-                "period": "2015-01-5",
-                "vision": 2.2
-            }, {
-                "period": "2015-01-09",
-                "vision": 1.8
-            }, {
-                "period": "2015-01-17",
-                "vision": 2.9
-            }, {
-                "period": "2015-01-30",
-                "vision": 3.1
-            }, {
-                "period": "2015-02-14",
-                "vision": 3.7
-            }, {
-                "period": "2015-03-10",
-                "vision": 4.2
-            }];
+            var performance_data = [
+                <?php
+                echo  generate_morris_graph_data($overall_game_score['Colour'],'Colour');
+                ?>
+            ];
             Morris.Line({
                 element: 'colours-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision'],
-                labels: ['Vision'],
+                ykeys: ['Colour'],
+                labels: ['Colour'],
                 xLabels: 'day'
             });
         }
@@ -426,40 +342,17 @@
          * learnability-performance-graph Data
          */
         if ($('#learnability-performance-graph').length) {
-            var performance_data = [{
-                "period": "2014-12-20",
-                "vision": 1.3
-            }, {
-                "period": "2014-12-23",
-                "vision": 1.4
-            }, {
-                "period": "2014-12-30",
-                "vision": 2.0
-            }, {
-                "period": "2015-01-5",
-                "vision": 2.2
-            }, {
-                "period": "2015-01-09",
-                "vision": 1.8
-            }, {
-                "period": "2015-01-17",
-                "vision": 2.9
-            }, {
-                "period": "2015-01-30",
-                "vision": 3.1
-            }, {
-                "period": "2015-02-14",
-                "vision": 3.7
-            }, {
-                "period": "2015-03-10",
-                "vision": 4.2
-            }];
+            var performance_data = [
+                <?php
+                echo  generate_morris_graph_data($overall_game_score['Procedures'],'Procedures');
+                ?>
+            ];
             Morris.Line({
                 element: 'learnability-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision'],
-                labels: ['Vision'],
+                ykeys: ['Procedures'],
+                labels: ['Procedures'],
                 xLabels: 'day'
             });
         }
@@ -468,40 +361,17 @@
          * decision-performance-graph Data
          */
         if ($('#decision-performance-graph').length) {
-            var performance_data = [{
-                "period": "2014-12-20",
-                "vision": 1.3
-            }, {
-                "period": "2014-12-23",
-                "vision": 1.4
-            }, {
-                "period": "2014-12-30",
-                "vision": 2.0
-            }, {
-                "period": "2015-01-5",
-                "vision": 2.2
-            }, {
-                "period": "2015-01-09",
-                "vision": 1.8
-            }, {
-                "period": "2015-01-17",
-                "vision": 2.9
-            }, {
-                "period": "2015-01-30",
-                "vision": 3.1
-            }, {
-                "period": "2015-02-14",
-                "vision": 3.7
-            }, {
-                "period": "2015-03-10",
-                "vision": 4.2
-            }];
+            var performance_data = [
+                <?php
+                echo  generate_morris_graph_data($overall_game_score['Sound'],'Sound');
+                ?>
+            ];
             Morris.Line({
                 element: 'decision-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision'],
-                labels: ['Vision'],
+                ykeys: ['Sound'],
+                labels: ['Sound'],
                 xLabels: 'day'
             });
         }
@@ -510,40 +380,17 @@
          * size-performance-graph Data
          */
         if ($('#size-performance-graph').length) {
-            var performance_data = [{
-                "period": "2014-12-20",
-                "vision": 1.3
-            }, {
-                "period": "2014-12-23",
-                "vision": 1.4
-            }, {
-                "period": "2014-12-30",
-                "vision": 2.0
-            }, {
-                "period": "2015-01-5",
-                "vision": 2.2
-            }, {
-                "period": "2015-01-09",
-                "vision": 1.8
-            }, {
-                "period": "2015-01-17",
-                "vision": 2.9
-            }, {
-                "period": "2015-01-30",
-                "vision": 3.1
-            }, {
-                "period": "2015-02-14",
-                "vision": 3.7
-            }, {
-                "period": "2015-03-10",
-                "vision": 4.2
-            }];
+            var performance_data = [
+                <?php
+                echo  generate_morris_graph_data($overall_game_score['Clothing'],'Clothing');
+                ?>
+            ];
             Morris.Line({
                 element: 'size-performance-graph',
                 data: performance_data,
                 xkey: 'period',
-                ykeys: ['vision'],
-                labels: ['Vision'],
+                ykeys: ['Clothing'],
+                labels: ['Clothing'],
                 xLabels: 'day'
             });
         }

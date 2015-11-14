@@ -80,42 +80,21 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="view"><b>Dr. Jayanath Sumanapala</b></td>
-                                        <td>MBBS</td>
-                                        <td>
-                                            <button class="btn btn-sm">Request to consult</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Dr. Siripala Gamlathge</b></td>
-                                        <td>PhD</td>
-                                        <td>
-                                            <button class="btn btn-sm">Request to consult</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Dr. (Mrs) Kanthi Lalanthapala</b></td>
-                                        <td>MPhill, PhD, MBBS, WCD, WWW</td>
-                                        <td>
-                                            <button class="btn btn-sm">Request to consult</button>
-                                        </td>
-                                    </tr>
-<tr>
-                                        <td class="view"><b>Dr. (Mrs) Jayanthi Swarnamali</b></td>
-                                        <td>PhD, MBBS, WWW</td>
-                                        <td>
-                                            <button class="btn btn-sm">Request to consult</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Dr. (Mrs) Kalpani Sumanaweera</b></td>
-                                        <td>PhD, WWW</td>
-                                        <td>
-                                            <button class="btn btn-sm">Request to consult</button>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    foreach ($consultants as $consultant) :
+                                        ?>
+                                        <tr>
+                                            <td class="view"><b><?= $consultant->fname . " " . $consultant->lname ?></b>
+                                            </td>
+                                            <td><?= $consultant->title ?></td>
+                                            <td>
+                                                <button class="btn btn-sm">Request to consult</button>
 
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    endforeach
+                                    ?>
                                     </tbody>
                                 </table>
 
@@ -166,37 +145,23 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="view"><b>Dr. Jayanath Sumanapala</b></td>
-                                        <td>MBBS</td>
-                                        <td>
-                                            <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Message</button>
-                                                <button class="btn btn-sm btn-danger">Remove</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Dr. Siripala Gamlathge</b></td>
-                                        <td>PhD</td>
-                                        <td>
-                                            <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Message</button>
-                                                <button class="btn btn-sm btn-danger">Remove</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Dr. (Mrs) Kanthi Lalanthapala</b></td>
-                                        <td>MPhill, PhD, MBBS, WCD, WWW</td>
-                                        <td>
-                                            <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-sm">Message</button>
-                                                <button class="btn btn-sm btn-danger">Remove</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
+                                    <?php
+                                    foreach ($my_consultants as $consultant) :
+                                        ?>
+                                        <tr>
+                                            <td class="view"><b><?= $consultant->fname . " " . $consultant->lname ?></b>
+                                            </td>
+                                            <td><?= $consultant->title ?></td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-sm">Message</button>
+                                                    <button class="btn btn-sm btn-danger">Remove</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    endforeach
+                                    ?>
                                     </tbody>
                                 </table>
 
@@ -243,7 +208,8 @@
                     </div>
                     <div class="col-md-8">
                         <h1>Dr. Siripala Gamlathge
-                        <br><small>MBBS</small>
+                            <br>
+                            <small>MBBS</small>
                         </h1>
                     </div>
                 </div>

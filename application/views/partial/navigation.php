@@ -45,10 +45,10 @@
                         class="menu-item-parent">Parent</span></a>
                 <ul>
                     <li>
-                        <a href="<?php echo base_url('index.php'); ?>/parent_view_performance">View Performance</a>
+                        <a href="<?php echo base_url('index.php'); ?>/Parents/view_performance">View Performance</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php'); ?>/parent_manage_consultants">Manage Consultants</a>
+                        <a href="<?php echo base_url('index.php'); ?>/Parents/manage_consultants">Manage Consultants</a>
                     </li>
                 </ul>
             </li>
