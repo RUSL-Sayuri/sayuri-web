@@ -54,6 +54,11 @@ class game extends CI_Model
         $this->db->where('play.game_id',$game_id);
         return $this->db->get()->result();
     }
+
+    public function insert_score($p_id, $game_id, $level, $score)
+    {
+        $this->db->insert('play', array('p_id'=>$p_id, 'game_id'=>$game_id, 'level'=>$level, 'score'=>$score));
+    }
 }
 
 /* End of file game.php */
