@@ -58,6 +58,7 @@ class Parents extends CI_Controller
         foreach ($play_dates as $date) {
             $game_score = 0;
             $count = 0;
+            //The Game Score finding Algorithm
             foreach ($game_scores as $game_category) {
                 foreach ($game_category as $games_in_category) {
                     if ($date->date == $games_in_category->date) {
