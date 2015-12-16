@@ -5,32 +5,25 @@ class API extends CI_Controller
 
     public function login()
     {
-        $this->load->modal('user');
+
+        $this->load->model('user');
 
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
         $user_info = $this->user->get_user_login_info($username);
 
-        if ($user_info->password == $password) {
-            $user_obj = $this->user->get_user($user_info->id);
-            header('Content-Type: application/json');
-            echo json_encode($user_obj);
+        if ($user_info == null) {
+            //user DNE
+            $view_data = array('result' => 'Login Failed');
+        } elseif (sha1($password) == $user_info['password']) {
+            //Login Success
+            $view_data = $this->user->get_user($user_info['id']);
+        } else {
+            $view_data = array('result' => 'Login Failed');
         }
 
-    }
-
-    public function add_score()
-    {
-        $this->load->modal('game');
-
-        $user_id = $this->input->post('user_id');
-        $game_id = $this->input->post('game_id');
-        $level = $this->input->post('level');
-        $score = $this->input->post('score');
-
-        $this->game->insert_score($user_id, $game_id, $level, $score);
-        echo json_encode(array('Success'));
+        $this->load->view('json', array('data' => $view_data));
 
 
     }

@@ -45,7 +45,7 @@
 | the active record class
 */
 
-$active_group = 'default';
+$active_group = 'clearDB';
 $active_record = TRUE;
 //Database=SayuriClearDBMySQLDatabase;Data Source=ap-cdbr-azure-southeast-a.cloudapp.net;User Id=bc6b13ab354d24;Password=72f42f87
 $db['default']['hostname'] = '127.0.0.1:3306';
