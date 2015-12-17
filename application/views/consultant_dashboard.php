@@ -7,7 +7,7 @@
 <!-- END HEADER -->
 
 <!-- Left panel : Navigation area -->
-<?php $this->load->view('partial/navigation'); ?>
+<?php $this->load->view('partial/navigation_consultant'); ?>
 <!-- END NAVIGATION -->
 
 <!-- MAIN PANEL -->

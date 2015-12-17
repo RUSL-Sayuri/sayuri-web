@@ -46,18 +46,35 @@ class game extends CI_Model
         return $this->db->get()->result();
     }
 
-    public function get_scores($game_id, $user_id){
+    public function get_scores($game_id, $user_id)
+    {
         $this->db->select('p_id, date_time, score, level, play.game_id');
         $this->db->from('play');
         $this->db->join('game', 'play.game_id = game.game_id', 'inner');
-        $this->db->where('p_id',$user_id);
-        $this->db->where('play.game_id',$game_id);
+        $this->db->where('p_id', $user_id);
+        $this->db->where('play.game_id', $game_id);
         return $this->db->get()->result();
     }
 
     public function insert_score($p_id, $game_id, $level, $score)
     {
-        $this->db->insert('play', array('p_id'=>$p_id, 'game_id'=>$game_id, 'level'=>$level, 'score'=>$score));
+        $this->db->insert('play', array('p_id' => $p_id, 'game_id' => $game_id, 'level' => $level, 'score' => $score));
+    }
+
+    public function get_overall_scores($user_id)
+    {
+        $this->db->select('game_id, SUM(score * level) AS score');
+        $this->db->from('play');
+        $this->db->group_by('game_id');
+        $this->db->where('p_id', $user_id);
+        return $this->db->get()->result();
+    }
+
+    public function get_played_p_id()
+    {
+        $this->db->from('play');
+        $this->db->group_by('p_id');
+        return $this->db->get()->result();
     }
 }
 

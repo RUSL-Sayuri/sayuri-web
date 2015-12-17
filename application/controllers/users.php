@@ -65,15 +65,27 @@ class users extends CI_Controller
         switch ($this->USER_OBJ->user_type) {
             case 'parent':
                 $this->parent_dashboard($this->USER_OBJ);
+                break;
+            case 'consultant':
+                $this->consultant_dashboard($this->USER_OBJ);
+                break;
+
+
         }
 
     }
+
     /**
      * Loads the Parent Dashboard
      */
     private function parent_dashboard()
     {
         redirect("/Parents/dashboard");
+    }
+
+    private function consultant_dashboard()
+    {
+        redirect("/Consultants/dashboard");
     }
 
 
@@ -125,8 +137,6 @@ class users extends CI_Controller
             redirect('/');
         }
     }
-
-
 
 
 }

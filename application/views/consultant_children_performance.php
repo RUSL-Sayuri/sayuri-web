@@ -7,7 +7,7 @@
 <!-- END HEADER -->
 
 <!-- Left panel : Navigation area -->
-<?php $this->load->view('partial/navigation'); ?>
+<?php $this->load->view('partial/navigation_consultant'); ?>
 <!-- END NAVIGATION -->
 
 <!-- MAIN PANEL -->
@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
-                    <i class="fa fa-suitcase fa-fw "></i> 
+                    <i class="fa fa-suitcase fa-fw "></i>
                     Children's Performance
 
                 </h1>
@@ -71,50 +71,37 @@
 
                                 </div>
 
-                                <table id="dt_children_performance" class="table table-striped table-bordered table-hover">
+                                <table id="dt_children_performance"
+                                       class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
                                         <th>Child</th>
-                                        <th>Overall Score </th>
+                                        <th>Overall Score</th>
                                         <th>Profile</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td class="view"><b>Saman Perera</b></td>
-                                        <td>5.0</td>
-                                        <td>
-                                            <button class="btn btn-sm">View full profile</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Dulani Rathnayaka</b></td>
-                                        <td>7.0</td>
-                                        <td>
-                                            <button class="btn btn-sm">View full profile</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Champa Kalhari</b></td>
-                                        <td>2.0</td>
-                                        <td>
-                                            <button class="btn btn-sm">View full profile</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>John Peter</b></td>
-                                        <td>8.0</td>
-                                        <td>
-                                            <button class="btn btn-sm">View full profile</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="view"><b>Gayan Perera</b></td>
-                                        <td>6.0</td>
-                                        <td>
-                                            <button class="btn btn-sm">View full profile</button>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    foreach ($score_data as $scores):
+                                        ?>
+
+                                        <tr>
+                                            <td>
+                                                <b><?= $scores['user']->fname . " " . $scores['user']->lname ?></b></td>
+                                            <td><?= $scores['score'] ?></td>
+                                            <td>
+                                                <button class="view btn btn-sm"
+                                                        data-parent-id="<?= $scores['user']->id ?>">View full profile
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    <?php
+
+                                    endforeach;
+
+                                    ?>
+
 
                                     </tbody>
                                 </table>
@@ -130,7 +117,7 @@
 
                 </article>
 
-              
+
             </div>
 
             <!-- end row -->
@@ -144,6 +131,49 @@
 </div>
 <!-- END MAIN PANEL -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="consultantModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Consultant Profile</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="center-block img-thumbnail" style="vertical-align: middle"
+                             src="<?php echo base_url('assests/') ?>/img/demo/64x64.png" alt=""/>
+                    </div>
+                    <div class="col-md-8">
+                        <h1 id="consultant-name"></h1>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-lg-8" style="padding-left: 50px">
+                    <p class="text-justify" id="description"></p>
+
+                    <p class="text-justify">Specialised Area: <span id="specialised"></span></p>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4" style="padding-right: 50px">
+                    <address class="text-align-right">
+                        <span id="address1"></span> ,<br/>
+                        <span id="address2"></span>,<br/>
+                        <span id="city"></span>,<br/>
+                        <span id="province"></span>.<br/>
+                    </address>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--================================================== -->
 
@@ -179,10 +209,9 @@
             "sPaginationType": "bootstrap_full"
         });
 
-       
 
         $('.view').click(function () {
-            $('#myModal').modal('show');
+            $('#consultantModel').modal('show');
         });
 
     })

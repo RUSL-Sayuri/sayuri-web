@@ -25,8 +25,16 @@ class API extends CI_Controller
 
         $this->load->view('json', array('data' => $view_data));
 
-
     }
+
+    public function consultant($id)
+    {
+        $this->load->model('consultant');
+        $view_data = $this->consultant->get_consultant($id);
+        $this->load->view('json', array('data' => $view_data));
+    }
+
+
 }
 
 /* End of file API.php */
