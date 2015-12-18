@@ -61,6 +61,9 @@ class API extends CI_Controller
         fwrite($myfile, $txt);
         fclose($myfile);
 
+        echo "ok";
+
+
     }
 
     public function testview()
