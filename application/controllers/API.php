@@ -3,6 +3,7 @@
 class API extends CI_Controller
 {
 
+
     public function login()
     {
 
@@ -40,6 +41,33 @@ class API extends CI_Controller
         $view_data = $this->user->get_parent($id);
         $this->load->view('json', array('data' => $view_data));
 
+    }
+
+    public function add_score($user_id, $game_id, $level, $score)
+    {
+        $this->load->model('game');
+        $this->game->insert_score($user_id, $game_id, $level, $score);
+        $view_data = array('result' => 'successful', 'game_id' => $game_id, 'score' => $score, 'level' => $level);
+        $this->load->view('json', array('data' => $view_data));
+    }
+
+    public function test()
+    {
+        $mark = $this->input->post('mark', TRUE);
+        $time = $this->input->post('time', TRUE);
+
+        $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+        $txt = $mark . " -" . $time;
+        fwrite($myfile, $txt);
+        fclose($myfile);
+
+    }
+
+    public function testview()
+    {
+        $myfile = fopen("newfile.txt", "r") or die("Unable to open file!");
+        echo fgets($myfile);
+        fclose($myfile);
     }
 
 
