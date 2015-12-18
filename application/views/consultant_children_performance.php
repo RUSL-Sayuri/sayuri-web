@@ -133,31 +133,28 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="consultantModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="parentModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Consultant Profile</h4>
+                <h4 class="modal-title" id="myModalLabel">Profile</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-4">
-                        <img class="center-block img-thumbnail" style="vertical-align: middle"
-                             src="<?php echo base_url('assests/') ?>/img/demo/64x64.png" alt=""/>
-                    </div>
                     <div class="col-md-8">
-                        <h1 id="consultant-name"></h1>
-
+                        <h1 id="parent-name"></h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-8 col-lg-8" style="padding-left: 50px">
+                    <h3 id="child-name"></h3>
+                    <label id="child-dob"></label>
+
                     <p class="text-justify" id="description"></p>
 
-                    <p class="text-justify">Specialised Area: <span id="specialised"></span></p>
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-4" style="padding-right: 50px">
                     <address class="text-align-right">
@@ -211,7 +208,28 @@
 
 
         $('.view').click(function () {
-            $('#consultantModel').modal('show');
+
+            var parentID = $(this).data('parent-id');
+            $.ajax({
+                type: "GET",
+                dataType: 'json',
+                url: "<?php echo base_url('/index.php/API/parent/'); ?>/" + parentID,
+                success: function (data) {
+
+                    $('#parent-name').text(data.fname + " " + data.lname);
+                    $('#child-name').text(data.child_name);
+                    $('#description').text(data.child_description);
+                    $('#child-dob').text(data.child_dob);
+                    $('#address1').text(data.addressline1);
+                    $('#address2').text(data.addressline2);
+                    $('#city').text(data.city);
+                    $('#province').text(data.province);
+
+                    $('#parentModel').modal('show');
+                }
+            });
+
+
         });
 
     })

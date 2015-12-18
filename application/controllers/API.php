@@ -34,6 +34,14 @@ class API extends CI_Controller
         $this->load->view('json', array('data' => $view_data));
     }
 
+    public function parent($id)
+    {
+        $this->load->model('user');
+        $view_data = $this->user->get_parent($id);
+        $this->load->view('json', array('data' => $view_data));
+
+    }
+
 
 }
 

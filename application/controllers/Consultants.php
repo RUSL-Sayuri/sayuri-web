@@ -13,6 +13,10 @@ class Consultants extends CI_Controller
 
         $this->USER_OBJ = $this->session->userdata('user');
 
+        if (!$this->USER_OBJ) {
+            redirect('/');
+        }
+
     }
 
 
@@ -35,6 +39,7 @@ class Consultants extends CI_Controller
     {
         $this->load->model('game');
         $score_data = array();
+
         $parent_ids = $this->consultant->get_parents($this->USER_OBJ->id);
 
         foreach ($parent_ids as $parent) {

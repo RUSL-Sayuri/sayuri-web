@@ -112,18 +112,31 @@ class user extends CI_Model
         $this->db->select('user.id, consultant.title, consultant.work_address, consultant.description, consultant.speazlized_area, user.fname, user.lname, user.addressline1, user.addressline2, user.city, user.province, user.username, user.profile_picture_url');
         $this->db->from('consultant');
         $this->db->join('user', 'consultant.id = user.id', 'inner');
-        $this->db->where('user_type',"consultant");
-        $this->db->where('deleted',0);
+        $this->db->where('user_type', "consultant");
+        $this->db->where('deleted', 0);
         return $this->db->get()->result();
     }
 
-    public function get_my_consultants($parent_id){
+    public function get_my_consultants($parent_id)
+    {
         $this->db->select('user.id, consultant.title, consultant.work_address, consultant.description, consultant.speazlized_area, user.fname, user.lname, user.addressline1, user.addressline2, user.city, user.province, user.username, user.profile_picture_url');
         $this->db->from('consultant');
         $this->db->join('user', 'consultant.id = user.id', 'inner');
         $this->db->join('parent_consultant', 'consultant.id = sayuri_parent_consultant.c_id', 'inner');
-        $this->db->where('p_id',$parent_id);
+        $this->db->where('p_id', $parent_id);
         return $this->db->get()->result();
+    }
+
+
+    public function get_parent($id)
+    {
+        $this->db->select('user.fname, user.lname, user.id, user.addressline1, user.addressline2, user.city, user.province, parent.child_dob, parent.child_name, parent.chile_gender, parent.child_description, class.`name` AS class_name');
+        $this->db->from('parent');
+        $this->db->join('user', 'parent.id = user.id', 'inner');
+        $this->db->join('class', 'parent.class_id = class.class_id', 'inner');
+        $this->db->where('user.id', $id);
+        return $this->db->get()->result()[0];
+
     }
 
 }

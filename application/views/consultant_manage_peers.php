@@ -215,6 +215,12 @@
                 dataType: 'json',
                 url: "<?php echo base_url('/index.php/API/consultant/'); ?>/" + consultantID,
                 success: function (data) {
+                    $('#consultant-name').text(data.fname + " " + data.lname);
+                    $('#description').text(data.description);
+                    $('#address1').text(data.addressline1);
+                    $('#address2').text(data.addressline2);
+                    $('#city').text(data.city);
+                    $('#province').text(data.province);
 
                     $('#specialised').text(data.speazlized_area);
 
