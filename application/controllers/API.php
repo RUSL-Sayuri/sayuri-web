@@ -51,8 +51,11 @@ class API extends CI_Controller
         $this->load->view('json', array('data' => $view_data));
     }
 
-    public function test()
+    public function test2()
     {
+
+        die('sdfsd');
+
         $mark = $this->input->post('mark', TRUE);
         $time = $this->input->post('time', TRUE);
 
